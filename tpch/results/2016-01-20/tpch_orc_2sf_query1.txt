@@ -1,0 +1,65 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/spark/lib/spark-assembly-1.4.1.2.3.2.0-2950-hadoop2.7.1.2.3.2.0-2950.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+WARNING: Use "yarn jar" to launch YARN applications.
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/spark/lib/spark-assembly-1.4.1.2.3.2.0-2950-hadoop2.7.1.2.3.2.0-2950.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+
+Logging initialized using configuration in file:/etc/hive/2.3.2.0-2950/0/hive-log4j.properties
+OK
+Time taken: 2.482 seconds
+Query ID = root_20160120134210_ff19ea97-cac1-492c-a56b-85370ef8e2b7
+Total jobs = 2
+Launching Job 1 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 6
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1453281581626_0061, Tracking URL = http://sandbox.hortonworks.com:8088/proxy/application_1453281581626_0061/
+Kill Command = /usr/hdp/2.3.2.0-2950/hadoop/bin/hadoop job  -kill job_1453281581626_0061
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 6
+2016-01-20 13:42:29,388 Stage-1 map = 0%,  reduce = 0%
+2016-01-20 13:42:44,915 Stage-1 map = 33%,  reduce = 0%, Cumulative CPU 10.82 sec
+2016-01-20 13:42:46,066 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 11.96 sec
+2016-01-20 13:43:18,622 Stage-1 map = 100%,  reduce = 22%, Cumulative CPU 16.0 sec
+2016-01-20 13:43:20,008 Stage-1 map = 100%,  reduce = 33%, Cumulative CPU 18.39 sec
+2016-01-20 13:43:22,554 Stage-1 map = 100%,  reduce = 44%, Cumulative CPU 20.73 sec
+2016-01-20 13:43:24,018 Stage-1 map = 100%,  reduce = 78%, Cumulative CPU 30.92 sec
+2016-01-20 13:43:25,281 Stage-1 map = 100%,  reduce = 89%, Cumulative CPU 34.86 sec
+2016-01-20 13:43:26,346 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 38.02 sec
+MapReduce Total cumulative CPU time: 38 seconds 20 msec
+Ended Job = job_1453281581626_0061
+Launching Job 2 out of 2
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1453281581626_0062, Tracking URL = http://sandbox.hortonworks.com:8088/proxy/application_1453281581626_0062/
+Kill Command = /usr/hdp/2.3.2.0-2950/hadoop/bin/hadoop job  -kill job_1453281581626_0062
+Hadoop job information for Stage-2: number of mappers: 1; number of reducers: 1
+2016-01-20 13:43:40,332 Stage-2 map = 0%,  reduce = 0%
+2016-01-20 13:43:49,332 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 1.74 sec
+2016-01-20 13:44:00,432 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 4.13 sec
+MapReduce Total cumulative CPU time: 4 seconds 130 msec
+Ended Job = job_1453281581626_0062
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 6   Cumulative CPU: 38.02 sec   HDFS Read: 122612023 HDFS Write: 904 SUCCESS
+Stage-Stage-2: Map: 1  Reduce: 1   Cumulative CPU: 4.13 sec   HDFS Read: 10164 HDFS Write: 581 SUCCESS
+Total MapReduce CPU Time Spent: 42 seconds 150 msec
+OK
+A	F	7.5478173E7	1.1319733134602676E11	1.0753640820731711E11	1.1183889876961186E11	25.505698877458507	38251.814164124684	0.050003950302472205	2959267
+N	F	1966480.0	2.946114826740028E9	2.798796636156393E9	2.9110301630685787E9	25.530080751953886	38248.31650014317	0.04999558590607176	77026
+N	O	1.49872794E8	2.247484874304172E11	2.1351545694798584E11	2.22059197400714E11	25.495187016222236	38232.45410805886	0.049979149350665796	5878474
+R	F	7.5577628E7	1.1335191421818013E11	1.0768808181149016E11	1.1199430786621811E11	25.512150382609875	38263.32154392178	0.049979780024126605	2962417
+Time taken: 114.623 seconds, Fetched: 4 row(s)

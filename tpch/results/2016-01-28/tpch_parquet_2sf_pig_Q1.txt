@@ -1,0 +1,23 @@
+WARNING: Use "yarn jar" to launch YARN applications.
+16/01/28 15:57:18 INFO pig.ExecTypeProvider: Trying ExecType : LOCAL
+16/01/28 15:57:18 INFO pig.ExecTypeProvider: Trying ExecType : MAPREDUCE
+16/01/28 15:57:18 INFO pig.ExecTypeProvider: Picked MAPREDUCE as the ExecType
+2016-01-28 15:57:19,034 [main] INFO  org.apache.pig.Main - Apache Pig version 0.15.0.2.3.2.0-2950 (rexported) compiled Sep 30 2015, 19:39:20
+2016-01-28 15:57:19,034 [main] INFO  org.apache.pig.Main - Logging error messages to: /root/D2F-Bench/bin/pig_1453996639031.log
+2016-01-28 15:57:20,204 [main] INFO  org.apache.pig.impl.util.Utils - Default bootup file /root/.pigbootup not found
+2016-01-28 15:57:20,600 [main] INFO  org.apache.pig.backend.hadoop.executionengine.HExecutionEngine - Connecting to hadoop file system at: hdfs://sandbox.hortonworks.com:8020
+2016-01-28 15:57:22,608 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2016-01-28 15:57:23,974 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig features used in the script: FILTER
+2016-01-28 15:57:24,035 [main] INFO  org.apache.pig.data.SchemaTupleBackend - Key [pig.schematuple] was not set... will not generate code.
+2016-01-28 15:57:24,098 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+2016-01-28 15:57:24,155 [main] INFO  org.apache.pig.newplan.logical.rules.ColumnPruneVisitor - Columns pruned for lineitem: $0, $1, $2, $3, $4, $5, $6, $7, $9, $11, $12, $13, $14, $15
+2016-01-28 15:57:24,160 [main] ERROR org.apache.pig.tools.grunt.Grunt - ERROR 2000: Error processing rule ColumnMapKeyPrune. Try -t ColumnMapKeyPrune
+Details at logfile: /root/D2F-Bench/bin/pig_1453996639031.log
+2016-01-28 15:57:24,194 [main] INFO  org.apache.pig.Main - Pig script completed in 5 seconds and 387 milliseconds (5387 ms)
+Jan 28, 2016 3:57:22 PM INFO: org.apache.parquet.hadoop.ParquetInputFormat: Total input paths to process : 2
+Jan 28, 2016 3:57:22 PM INFO: org.apache.parquet.hadoop.ParquetFileReader: Initiating action with parallelism: 5
+Jan 28, 2016 3:57:22 PM INFO: org.apache.parquet.hadoop.ParquetFileReader: reading another 2 footers
+Jan 28, 2016 3:57:22 PM INFO: org.apache.parquet.hadoop.ParquetFileReader: Initiating action with parallelism: 5

@@ -1,0 +1,291 @@
+WARNING: Use "yarn jar" to launch YARN applications.
+16/02/07 16:26:30 INFO pig.ExecTypeProvider: Trying ExecType : LOCAL
+16/02/07 16:26:30 INFO pig.ExecTypeProvider: Trying ExecType : MAPREDUCE
+16/02/07 16:26:30 INFO pig.ExecTypeProvider: Picked MAPREDUCE as the ExecType
+2016-02-07 16:26:30,311 [main] INFO  org.apache.pig.Main - Apache Pig version 0.15.0.2.3.2.0-2950 (rexported) compiled Sep 30 2015, 19:39:20
+2016-02-07 16:26:30,311 [main] INFO  org.apache.pig.Main - Logging error messages to: /root/D2F-Bench/bin/pig_1454862390309.log
+2016-02-07 16:26:31,295 [main] INFO  org.apache.pig.impl.util.Utils - Default bootup file /root/.pigbootup not found
+2016-02-07 16:26:31,616 [main] INFO  org.apache.pig.backend.hadoop.executionengine.HExecutionEngine - Connecting to hadoop file system at: hdfs://sandbox.hortonworks.com:8020
+2016-02-07 16:26:33,895 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig features used in the script: HASH_JOIN,GROUP_BY,ORDER_BY,FILTER
+2016-02-07 16:26:33,954 [main] INFO  org.apache.pig.data.SchemaTupleBackend - Key [pig.schematuple] was not set... will not generate code.
+2016-02-07 16:26:34,013 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+2016-02-07 16:26:34,059 [main] INFO  org.apache.pig.newplan.logical.rules.PredicatePushdownOptimizer - Setting predicate pushdown filter [((_col11 < _col12) and ((_col10 < _col11) and ((_col12 >= '1995-01-01') and (_col12 < '1996-01-01'))))] on loader org.apache.pig.builtin.OrcStorage@42e68d00
+2016-02-07 16:26:34,083 [main] INFO  org.apache.pig.builtin.OrcStorage - Pushdown predicate expression is ((_col11 < _col12) and ((_col10 < _col11) and ((_col12 >= '1995-01-01') and (_col12 < '1996-01-01'))))
+2016-02-07 16:26:34,083 [main] INFO  org.apache.pig.builtin.OrcStorage - Pushdown predicate SearchArgument is:
+leaf-0 = (LESS_THAN _col11 _col12)
+leaf-1 = (LESS_THAN _col10 _col11)
+leaf-2 = (LESS_THAN _col12 1995-01-01)
+leaf-3 = (LESS_THAN _col12 1996-01-01)
+expr = (and leaf-0 leaf-1 (not leaf-2) leaf-3)
+2016-02-07 16:26:34,215 [main] INFO  org.apache.pig.newplan.logical.rules.ColumnPruneVisitor - Columns pruned for orders: $1, $2, $3, $4, $6, $7, $8
+2016-02-07 16:26:34,217 [main] INFO  org.apache.pig.newplan.logical.rules.ColumnPruneVisitor - Columns pruned for lineitem: $1, $2, $3, $4, $5, $6, $7, $8, $9, $13, $15
+2016-02-07 16:26:34,475 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MRCompiler - File concatenation threshold: 100 optimistic? false
+2016-02-07 16:26:34,568 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.SecondaryKeyOptimizerMR - Using Secondary Key Optimization for MapReduce node scope-94
+2016-02-07 16:26:34,577 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MRCompiler$LastInputStreamingOptimizer - Rewrite: POPackage->POForEach to POPackage(JoinPackager)
+2016-02-07 16:26:34,591 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer - MR plan size before optimization: 4
+2016-02-07 16:26:34,591 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer - MR plan size after optimization: 4
+2016-02-07 16:26:35,179 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:26:35,344 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:26:35,644 [main] INFO  org.apache.pig.tools.pigstats.mapreduce.MRScriptState - Pig script settings are added to the job
+2016-02-07 16:26:35,666 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - mapred.job.reduce.markreset.buffer.percent is not set, set to default 0.3
+2016-02-07 16:26:35,672 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Reduce phase detected, estimating # of required reducers.
+2016-02-07 16:26:35,677 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Using reducer estimator: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator
+2016-02-07 16:26:35,699 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator - BytesPerReducer=1000000000 maxReducers=999 totalInputFileSize=1682177237
+2016-02-07 16:26:35,699 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting Parallelism to 2
+2016-02-07 16:26:35,699 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - This job cannot be converted run in-process
+2016-02-07 16:26:35,996 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/pig-0.15.0.2.3.2.0-2950-core-h2.jar to DistributedCache through /tmp/temp1596278185/tmp-15442721/pig-0.15.0.2.3.2.0-2950-core-h2.jar
+2016-02-07 16:26:36,038 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/hadoop-mapreduce/commons-lang3-3.3.2.jar to DistributedCache through /tmp/temp1596278185/tmp-2048335888/commons-lang3-3.3.2.jar
+2016-02-07 16:26:36,082 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/hive-common-1.2.1.2.3.2.0-2950.jar to DistributedCache through /tmp/temp1596278185/tmp651647583/hive-common-1.2.1.2.3.2.0-2950.jar
+2016-02-07 16:26:36,182 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/hive-exec-1.2.1.2.3.2.0-2950-core.jar to DistributedCache through /tmp/temp1596278185/tmp424526086/hive-exec-1.2.1.2.3.2.0-2950-core.jar
+2016-02-07 16:26:36,226 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/h2/hive-shims-0.23-1.2.1.2.3.2.0-2950.jar to DistributedCache through /tmp/temp1596278185/tmp1265794042/hive-shims-0.23-1.2.1.2.3.2.0-2950.jar
+2016-02-07 16:26:36,263 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/hive-shims-common-1.2.1.2.3.2.0-2950.jar to DistributedCache through /tmp/temp1596278185/tmp-1333007020/hive-shims-common-1.2.1.2.3.2.0-2950.jar
+2016-02-07 16:26:36,311 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/hive-serde-1.2.1.2.3.2.0-2950.jar to DistributedCache through /tmp/temp1596278185/tmp121681393/hive-serde-1.2.1.2.3.2.0-2950.jar
+2016-02-07 16:26:36,357 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/kryo-2.22.jar to DistributedCache through /tmp/temp1596278185/tmp1452248732/kryo-2.22.jar
+2016-02-07 16:26:36,399 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/automaton-1.11-8.jar to DistributedCache through /tmp/temp1596278185/tmp-841483344/automaton-1.11-8.jar
+2016-02-07 16:26:36,447 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/antlr-runtime-3.4.jar to DistributedCache through /tmp/temp1596278185/tmp663010062/antlr-runtime-3.4.jar
+2016-02-07 16:26:36,491 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/hadoop-mapreduce/joda-time-2.8.2.jar to DistributedCache through /tmp/temp1596278185/tmp448003264/joda-time-2.8.2.jar
+2016-02-07 16:26:36,553 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting up single store job
+2016-02-07 16:26:36,561 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Key [pig.schematuple] is false, will not generate code.
+2016-02-07 16:26:36,561 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Starting process to move generated code to distributed cacche
+2016-02-07 16:26:36,561 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Setting key [pig.schematuple.classes] with classes to deserialize []
+2016-02-07 16:26:36,691 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 1 map-reduce job(s) waiting for submission.
+2016-02-07 16:26:36,897 [JobControl] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:26:36,898 [JobControl] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:26:37,000 [JobControl] WARN  org.apache.hadoop.mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2016-02-07 16:26:37,148 [JobControl] INFO  org.apache.hadoop.hive.ql.log.PerfLogger - <PERFLOG method=OrcGetSplits from=org.apache.hadoop.hive.ql.io.orc.ReaderImpl>
+2016-02-07 16:26:37,227 [JobControl] INFO  org.apache.hadoop.hive.ql.io.orc.OrcInputFormat - FooterCacheHitRatio: 0/0
+2016-02-07 16:26:37,228 [JobControl] INFO  org.apache.hadoop.hive.ql.log.PerfLogger - </PERFLOG method=OrcGetSplits start=1454862397148 end=1454862397228 duration=80 from=org.apache.hadoop.hive.ql.io.orc.ReaderImpl>
+2016-02-07 16:26:37,228 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths (combined) to process : 8
+2016-02-07 16:26:37,233 [JobControl] INFO  org.apache.hadoop.hive.ql.log.PerfLogger - <PERFLOG method=OrcGetSplits from=org.apache.hadoop.hive.ql.io.orc.ReaderImpl>
+2016-02-07 16:26:37,246 [JobControl] INFO  org.apache.hadoop.hive.ql.io.orc.OrcInputFormat - FooterCacheHitRatio: 0/0
+2016-02-07 16:26:37,246 [JobControl] INFO  org.apache.hadoop.hive.ql.log.PerfLogger - </PERFLOG method=OrcGetSplits start=1454862397233 end=1454862397246 duration=13 from=org.apache.hadoop.hive.ql.io.orc.ReaderImpl>
+2016-02-07 16:26:37,250 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths (combined) to process : 3
+2016-02-07 16:26:37,335 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - number of splits:11
+2016-02-07 16:26:37,609 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1454761138186_0335
+2016-02-07 16:26:37,829 [JobControl] INFO  org.apache.hadoop.mapred.YARNRunner - Job jar is not present. Not adding any jar to the list of resources.
+2016-02-07 16:26:37,973 [JobControl] INFO  org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1454761138186_0335
+2016-02-07 16:26:38,053 [JobControl] INFO  org.apache.hadoop.mapreduce.Job - The url to track the job: http://sandbox.hortonworks.com:8088/proxy/application_1454761138186_0335/
+2016-02-07 16:26:38,053 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - HadoopJobId: job_1454761138186_0335
+2016-02-07 16:26:38,053 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Processing aliases flineitem,l1,lineitem,orders,sell1
+2016-02-07 16:26:38,053 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - detailed locations: M: lineitem[5,11],flineitem[8,12],lineitem[-1,-1],l1[12,5],orders[2,9],orders[-1,-1],l1[12,5] C:  R: sell1[13,8]
+2016-02-07 16:26:38,069 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 0% complete
+2016-02-07 16:26:38,070 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0335]
+2016-02-07 16:28:25,610 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 4% complete
+2016-02-07 16:28:25,612 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0335]
+2016-02-07 16:28:50,212 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 8% complete
+2016-02-07 16:28:50,212 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0335]
+2016-02-07 16:29:22,363 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 12% complete
+2016-02-07 16:29:22,363 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0335]
+2016-02-07 16:30:10,555 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 19% complete
+2016-02-07 16:30:10,556 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0335]
+2016-02-07 16:30:30,601 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 23% complete
+2016-02-07 16:30:30,602 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0335]
+2016-02-07 16:30:38,735 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:30:38,735 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:30:38,744 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:30:39,239 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:30:39,240 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:30:39,244 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:30:39,491 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:30:39,491 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:30:39,498 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:30:39,581 [main] INFO  org.apache.pig.tools.pigstats.mapreduce.MRScriptState - Pig script settings are added to the job
+2016-02-07 16:30:39,582 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - mapred.job.reduce.markreset.buffer.percent is not set, set to default 0.3
+2016-02-07 16:30:39,582 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Reduce phase detected, estimating # of required reducers.
+2016-02-07 16:30:39,582 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Using reducer estimator: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator
+2016-02-07 16:30:39,619 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator - BytesPerReducer=1000000000 maxReducers=999 totalInputFileSize=5969437
+2016-02-07 16:30:39,619 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting Parallelism to 1
+2016-02-07 16:30:39,619 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - This job cannot be converted run in-process
+2016-02-07 16:30:39,684 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/pig-0.15.0.2.3.2.0-2950-core-h2.jar to DistributedCache through /tmp/temp1596278185/tmp-1226739384/pig-0.15.0.2.3.2.0-2950-core-h2.jar
+2016-02-07 16:30:39,719 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/automaton-1.11-8.jar to DistributedCache through /tmp/temp1596278185/tmp-540324504/automaton-1.11-8.jar
+2016-02-07 16:30:39,752 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/antlr-runtime-3.4.jar to DistributedCache through /tmp/temp1596278185/tmp-1693341816/antlr-runtime-3.4.jar
+2016-02-07 16:30:39,786 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/hadoop-mapreduce/joda-time-2.8.2.jar to DistributedCache through /tmp/temp1596278185/tmp-1252055055/joda-time-2.8.2.jar
+2016-02-07 16:30:39,801 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting up single store job
+2016-02-07 16:30:39,802 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Key [pig.schematuple] is false, will not generate code.
+2016-02-07 16:30:39,802 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Starting process to move generated code to distributed cacche
+2016-02-07 16:30:39,802 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Setting key [pig.schematuple.classes] with classes to deserialize []
+2016-02-07 16:30:39,845 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 1 map-reduce job(s) waiting for submission.
+2016-02-07 16:30:39,968 [JobControl] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:30:39,968 [JobControl] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:30:39,997 [JobControl] WARN  org.apache.hadoop.mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2016-02-07 16:30:40,050 [JobControl] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 2
+2016-02-07 16:30:40,050 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 2
+2016-02-07 16:30:40,052 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths (combined) to process : 1
+2016-02-07 16:30:40,118 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+2016-02-07 16:30:40,203 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1454761138186_0336
+2016-02-07 16:30:40,210 [JobControl] INFO  org.apache.hadoop.mapred.YARNRunner - Job jar is not present. Not adding any jar to the list of resources.
+2016-02-07 16:30:40,459 [JobControl] INFO  org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1454761138186_0336
+2016-02-07 16:30:40,466 [JobControl] INFO  org.apache.hadoop.mapreduce.Job - The url to track the job: http://sandbox.hortonworks.com:8088/proxy/application_1454761138186_0336/
+2016-02-07 16:30:40,466 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - HadoopJobId: job_1454761138186_0336
+2016-02-07 16:30:40,466 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Processing aliases grpResult,sumResult,urgItems
+2016-02-07 16:30:40,466 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - detailed locations: M: grpResult[15,12] C:  R: sumResult[16,12],urgItems[17,15],urgItems[17,15]
+2016-02-07 16:30:57,587 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 37% complete
+2016-02-07 16:30:57,587 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0336]
+2016-02-07 16:31:10,694 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 50% complete
+2016-02-07 16:31:10,694 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0336]
+2016-02-07 16:31:15,843 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:31:15,844 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:31:15,848 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:31:16,096 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:31:16,097 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:31:16,102 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:31:16,289 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:31:16,289 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:31:16,295 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:31:16,372 [main] INFO  org.apache.pig.tools.pigstats.mapreduce.MRScriptState - Pig script settings are added to the job
+2016-02-07 16:31:16,373 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - mapred.job.reduce.markreset.buffer.percent is not set, set to default 0.3
+2016-02-07 16:31:16,374 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Reduce phase detected, estimating # of required reducers.
+2016-02-07 16:31:16,374 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Using reducer estimator: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator
+2016-02-07 16:31:16,380 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator - BytesPerReducer=1000000000 maxReducers=999 totalInputFileSize=45
+2016-02-07 16:31:16,382 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting Parallelism to 1
+2016-02-07 16:31:16,383 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - This job cannot be converted run in-process
+2016-02-07 16:31:16,509 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/pig-0.15.0.2.3.2.0-2950-core-h2.jar to DistributedCache through /tmp/temp1596278185/tmp-1447179627/pig-0.15.0.2.3.2.0-2950-core-h2.jar
+2016-02-07 16:31:16,600 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/automaton-1.11-8.jar to DistributedCache through /tmp/temp1596278185/tmp2041220841/automaton-1.11-8.jar
+2016-02-07 16:31:16,646 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/antlr-runtime-3.4.jar to DistributedCache through /tmp/temp1596278185/tmp1596302063/antlr-runtime-3.4.jar
+2016-02-07 16:31:16,685 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/hadoop-mapreduce/joda-time-2.8.2.jar to DistributedCache through /tmp/temp1596278185/tmp752469468/joda-time-2.8.2.jar
+2016-02-07 16:31:16,710 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting up single store job
+2016-02-07 16:31:16,712 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Key [pig.schematuple] is false, will not generate code.
+2016-02-07 16:31:16,712 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Starting process to move generated code to distributed cacche
+2016-02-07 16:31:16,712 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Setting key [pig.schematuple.classes] with classes to deserialize []
+2016-02-07 16:31:16,761 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 1 map-reduce job(s) waiting for submission.
+2016-02-07 16:31:16,877 [JobControl] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:31:16,877 [JobControl] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:31:16,907 [JobControl] WARN  org.apache.hadoop.mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2016-02-07 16:31:16,978 [JobControl] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2016-02-07 16:31:16,978 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+2016-02-07 16:31:16,979 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths (combined) to process : 1
+2016-02-07 16:31:17,048 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+2016-02-07 16:31:17,108 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1454761138186_0337
+2016-02-07 16:31:17,114 [JobControl] INFO  org.apache.hadoop.mapred.YARNRunner - Job jar is not present. Not adding any jar to the list of resources.
+2016-02-07 16:31:17,361 [JobControl] INFO  org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1454761138186_0337
+2016-02-07 16:31:17,366 [JobControl] INFO  org.apache.hadoop.mapreduce.Job - The url to track the job: http://sandbox.hortonworks.com:8088/proxy/application_1454761138186_0337/
+2016-02-07 16:31:17,366 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - HadoopJobId: job_1454761138186_0337
+2016-02-07 16:31:17,366 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Processing aliases sortResult
+2016-02-07 16:31:17,366 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - detailed locations: M: sortResult[20,13] C:  R: 
+2016-02-07 16:31:32,479 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 62% complete
+2016-02-07 16:31:32,479 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0337]
+2016-02-07 16:31:39,500 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 75% complete
+2016-02-07 16:31:39,501 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0337]
+2016-02-07 16:31:42,606 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:31:42,607 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:31:42,612 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:31:42,877 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:31:42,877 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:31:42,883 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:31:43,049 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:31:43,050 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:31:43,056 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:31:43,108 [main] INFO  org.apache.pig.tools.pigstats.mapreduce.MRScriptState - Pig script settings are added to the job
+2016-02-07 16:31:43,108 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - mapred.job.reduce.markreset.buffer.percent is not set, set to default 0.3
+2016-02-07 16:31:43,108 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Reduce phase detected, estimating # of required reducers.
+2016-02-07 16:31:43,109 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting Parallelism to 1
+2016-02-07 16:31:43,109 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - This job cannot be converted run in-process
+2016-02-07 16:31:43,160 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/pig-0.15.0.2.3.2.0-2950-core-h2.jar to DistributedCache through /tmp/temp1596278185/tmp255351612/pig-0.15.0.2.3.2.0-2950-core-h2.jar
+2016-02-07 16:31:43,191 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/automaton-1.11-8.jar to DistributedCache through /tmp/temp1596278185/tmp-1393679020/automaton-1.11-8.jar
+2016-02-07 16:31:43,228 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/pig/lib/antlr-runtime-3.4.jar to DistributedCache through /tmp/temp1596278185/tmp-1041538794/antlr-runtime-3.4.jar
+2016-02-07 16:31:43,267 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/usr/hdp/2.3.2.0-2950/hadoop-mapreduce/joda-time-2.8.2.jar to DistributedCache through /tmp/temp1596278185/tmp1124339749/joda-time-2.8.2.jar
+2016-02-07 16:31:43,277 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting up single store job
+2016-02-07 16:31:43,277 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Key [pig.schematuple] is false, will not generate code.
+2016-02-07 16:31:43,277 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Starting process to move generated code to distributed cacche
+2016-02-07 16:31:43,277 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Setting key [pig.schematuple.classes] with classes to deserialize []
+2016-02-07 16:31:43,304 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 1 map-reduce job(s) waiting for submission.
+2016-02-07 16:31:43,432 [JobControl] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:31:43,432 [JobControl] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:31:43,463 [JobControl] WARN  org.apache.hadoop.mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2016-02-07 16:31:43,511 [JobControl] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2016-02-07 16:31:43,511 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+2016-02-07 16:31:43,511 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths (combined) to process : 1
+2016-02-07 16:31:43,587 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+2016-02-07 16:31:43,649 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1454761138186_0338
+2016-02-07 16:31:43,655 [JobControl] INFO  org.apache.hadoop.mapred.YARNRunner - Job jar is not present. Not adding any jar to the list of resources.
+2016-02-07 16:31:43,903 [JobControl] INFO  org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1454761138186_0338
+2016-02-07 16:31:43,908 [JobControl] INFO  org.apache.hadoop.mapreduce.Job - The url to track the job: http://sandbox.hortonworks.com:8088/proxy/application_1454761138186_0338/
+2016-02-07 16:31:43,908 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - HadoopJobId: job_1454761138186_0338
+2016-02-07 16:31:43,908 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Processing aliases sortResult
+2016-02-07 16:31:43,908 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - detailed locations: M: sortResult[20,13] C:  R: 
+2016-02-07 16:31:58,012 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 87% complete
+2016-02-07 16:31:58,013 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0338]
+2016-02-07 16:32:11,098 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1454761138186_0338]
+2016-02-07 16:32:14,269 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:14,269 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:14,275 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:14,570 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:14,571 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:14,576 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:14,733 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:14,734 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:14,744 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:14,797 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 100% complete
+2016-02-07 16:32:14,829 [main] INFO  org.apache.pig.tools.pigstats.mapreduce.SimplePigStats - Script Statistics: 
+
+HadoopVersion	PigVersion	UserId	StartedAt	FinishedAt	Features
+2.7.1.2.3.2.0-2950	0.15.0.2.3.2.0-2950	root	2016-02-07 16:26:35	2016-02-07 16:32:14	HASH_JOIN,GROUP_BY,ORDER_BY,FILTER
+
+Success!
+
+Job Stats (time in seconds):
+JobId	Maps	Reduces	MaxMapTime	MinMapTime	AvgMapTime	MedianMapTime	MaxReduceTime	MinReduceTime	AvgReduceTime	MedianReducetime	Alias	Feature	Outputs
+job_1454761138186_0335	11	2	123	65	107	118	107	105	106	106	flineitem,l1,lineitem,orders,sell1	HASH_JOIN	
+job_1454761138186_0336	1	1	5	5	5	5	11	11	11	11	grpResult,sumResult,urgItems	GROUP_BY	
+job_1454761138186_0337	1	1	4	4	4	4	4	4	4	4	sortResult	SAMPLER	
+job_1454761138186_0338	1	1	4	4	4	4	10	10	10	10	sortResult	ORDER_BY	/apps/hive/warehouse/Q12_out,
+
+Input(s):
+Successfully read 47989007 records from: "/apps/hive/warehouse/tpch_orc_8sf.db/lineitem"
+Successfully read 12000000 records from: "/apps/hive/warehouse/tpch_orc_8sf.db/orders"
+
+Output(s):
+Successfully stored 2 records (37 bytes) in: "/apps/hive/warehouse/Q12_out"
+
+Counters:
+Total records written : 2
+Total bytes written : 37
+Spillable Memory Manager spill count : 0
+Total bags proactively spilled: 0
+Total records proactively spilled: 0
+
+Job DAG:
+job_1454761138186_0335	->	job_1454761138186_0336,
+job_1454761138186_0336	->	job_1454761138186_0337,
+job_1454761138186_0337	->	job_1454761138186_0338,
+job_1454761138186_0338
+
+
+2016-02-07 16:32:14,987 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:14,988 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:14,994 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:15,221 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:15,221 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:15,225 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:15,485 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:15,485 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:15,490 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:15,789 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:15,790 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:15,810 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:16,040 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:16,041 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:16,045 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:16,246 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:16,246 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:16,252 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:16,477 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:16,477 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:16,482 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:16,630 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:16,630 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:16,635 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:16,770 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:16,771 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:16,774 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:16,911 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:16,911 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:16,915 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:17,034 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:17,034 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:17,038 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:17,179 [main] INFO  org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl - Timeline service address: http://sandbox.hortonworks.com:8188/ws/v1/timeline/
+2016-02-07 16:32:17,179 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at sandbox.hortonworks.com/192.168.65.131:8050
+2016-02-07 16:32:17,183 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2016-02-07 16:32:17,227 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Success!
+2016-02-07 16:32:17,256 [main] INFO  org.apache.pig.Main - Pig script completed in 5 minutes, 47 seconds and 115 milliseconds (347115 ms)

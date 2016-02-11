@@ -1,0 +1,53 @@
+WARNING: Use "yarn jar" to launch YARN applications.
+16/01/27 16:27:17 INFO pig.ExecTypeProvider: Trying ExecType : LOCAL
+16/01/27 16:27:17 INFO pig.ExecTypeProvider: Trying ExecType : MAPREDUCE
+16/01/27 16:27:17 INFO pig.ExecTypeProvider: Picked MAPREDUCE as the ExecType
+2016-01-27 16:27:18,089 [main] INFO  org.apache.pig.Main - Apache Pig version 0.15.0.2.3.2.0-2950 (rexported) compiled Sep 30 2015, 19:39:20
+2016-01-27 16:27:18,089 [main] INFO  org.apache.pig.Main - Logging error messages to: /root/D2F-Bench/bin/pig_1453912038086.log
+2016-01-27 16:27:20,833 [main] INFO  org.apache.pig.impl.util.Utils - Default bootup file /root/.pigbootup not found
+2016-01-27 16:27:21,599 [main] INFO  org.apache.pig.backend.hadoop.executionengine.HExecutionEngine - Connecting to hadoop file system at: hdfs://sandbox.hortonworks.com:8020
+2016-01-27 16:27:26,935 [main] ERROR org.apache.pig.PigServer - exception during parsing: Error during parsing. Cannot get schema from loadFunc org.apache.pig.builtin.AvroStorage
+Failed to parse: Can not retrieve schema from loader org.apache.pig.builtin.AvroStorage@9824e70
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:201)
+	at org.apache.pig.PigServer$Graph.parseQuery(PigServer.java:1735)
+	at org.apache.pig.PigServer$Graph.access$000(PigServer.java:1443)
+	at org.apache.pig.PigServer.parseAndBuild(PigServer.java:387)
+	at org.apache.pig.PigServer.executeBatch(PigServer.java:412)
+	at org.apache.pig.PigServer.executeBatch(PigServer.java:398)
+	at org.apache.pig.tools.grunt.GruntParser.executeBatch(GruntParser.java:171)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:234)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:205)
+	at org.apache.pig.tools.grunt.Grunt.exec(Grunt.java:81)
+	at org.apache.pig.Main.run(Main.java:502)
+	at org.apache.pig.Main.main(Main.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+Caused by: java.lang.RuntimeException: Can not retrieve schema from loader org.apache.pig.builtin.AvroStorage@9824e70
+	at org.apache.pig.newplan.logical.relational.LOLoad.<init>(LOLoad.java:91)
+	at org.apache.pig.parser.LogicalPlanBuilder.buildLoadOp(LogicalPlanBuilder.java:901)
+	at org.apache.pig.parser.LogicalPlanGenerator.load_clause(LogicalPlanGenerator.java:3568)
+	at org.apache.pig.parser.LogicalPlanGenerator.op_clause(LogicalPlanGenerator.java:1625)
+	at org.apache.pig.parser.LogicalPlanGenerator.general_statement(LogicalPlanGenerator.java:1102)
+	at org.apache.pig.parser.LogicalPlanGenerator.statement(LogicalPlanGenerator.java:560)
+	at org.apache.pig.parser.LogicalPlanGenerator.query(LogicalPlanGenerator.java:421)
+	at org.apache.pig.parser.QueryParserDriver.parse(QueryParserDriver.java:191)
+	... 17 more
+Caused by: org.apache.pig.impl.logicalLayer.FrontendException: ERROR 2245: Cannot get schema from loadFunc org.apache.pig.builtin.AvroStorage
+	at org.apache.pig.newplan.logical.relational.LOLoad.getSchemaFromMetaData(LOLoad.java:179)
+	at org.apache.pig.newplan.logical.relational.LOLoad.<init>(LOLoad.java:89)
+	... 24 more
+Caused by: java.io.IOException: Not a data file.
+	at org.apache.avro.file.DataFileStream.initialize(DataFileStream.java:105)
+	at org.apache.avro.file.DataFileStream.<init>(DataFileStream.java:84)
+	at org.apache.pig.builtin.AvroStorage.getAvroSchema(AvroStorage.java:320)
+	at org.apache.pig.builtin.AvroStorage.getAvroSchema(AvroStorage.java:282)
+	at org.apache.pig.builtin.AvroStorage.getSchema(AvroStorage.java:256)
+	at org.apache.pig.newplan.logical.relational.LOLoad.getSchemaFromMetaData(LOLoad.java:175)
+	... 25 more
+2016-01-27 16:27:26,941 [main] ERROR org.apache.pig.tools.grunt.Grunt - ERROR 2245: Cannot get schema from loadFunc org.apache.pig.builtin.AvroStorage
+Details at logfile: /root/D2F-Bench/bin/pig_1453912038086.log
+2016-01-27 16:27:26,984 [main] INFO  org.apache.pig.Main - Pig script completed in 9 seconds and 366 milliseconds (9366 ms)

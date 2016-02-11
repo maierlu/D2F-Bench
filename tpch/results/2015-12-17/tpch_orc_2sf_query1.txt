@@ -1,0 +1,64 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/spark/lib/spark-assembly-1.4.1.2.3.2.0-2950-hadoop2.7.1.2.3.2.0-2950.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+WARNING: Use "yarn jar" to launch YARN applications.
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/spark/lib/spark-assembly-1.4.1.2.3.2.0-2950-hadoop2.7.1.2.3.2.0-2950.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+
+Logging initialized using configuration in file:/etc/hive/2.3.2.0-2950/0/hive-log4j.properties
+OK
+Time taken: 2.723 seconds
+Query ID = root_20151217140742_c5c8f507-551f-495f-bc38-5c458c1abdc4
+Total jobs = 2
+Launching Job 1 out of 2
+Number of reduce tasks not specified. Estimated from input data size: 6
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1450357971950_0020, Tracking URL = http://sandbox.hortonworks.com:8088/proxy/application_1450357971950_0020/
+Kill Command = /usr/hdp/2.3.2.0-2950/hadoop/bin/hadoop job  -kill job_1450357971950_0020
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 6
+2015-12-17 14:08:00,452 Stage-1 map = 0%,  reduce = 0%
+2015-12-17 14:08:16,942 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 11.24 sec
+2015-12-17 14:08:45,124 Stage-1 map = 100%,  reduce = 22%, Cumulative CPU 14.6 sec
+2015-12-17 14:08:50,427 Stage-1 map = 100%,  reduce = 33%, Cumulative CPU 16.92 sec
+2015-12-17 14:08:53,030 Stage-1 map = 100%,  reduce = 44%, Cumulative CPU 22.63 sec
+2015-12-17 14:08:54,258 Stage-1 map = 100%,  reduce = 50%, Cumulative CPU 24.88 sec
+2015-12-17 14:08:55,462 Stage-1 map = 100%,  reduce = 83%, Cumulative CPU 31.33 sec
+2015-12-17 14:08:59,132 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 37.72 sec
+MapReduce Total cumulative CPU time: 37 seconds 720 msec
+Ended Job = job_1450357971950_0020
+Launching Job 2 out of 2
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1450357971950_0021, Tracking URL = http://sandbox.hortonworks.com:8088/proxy/application_1450357971950_0021/
+Kill Command = /usr/hdp/2.3.2.0-2950/hadoop/bin/hadoop job  -kill job_1450357971950_0021
+Hadoop job information for Stage-2: number of mappers: 1; number of reducers: 1
+2015-12-17 14:09:13,756 Stage-2 map = 0%,  reduce = 0%
+2015-12-17 14:09:20,189 Stage-2 map = 100%,  reduce = 0%, Cumulative CPU 1.21 sec
+2015-12-17 14:09:33,003 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 4.15 sec
+MapReduce Total cumulative CPU time: 4 seconds 150 msec
+Ended Job = job_1450357971950_0021
+MapReduce Jobs Launched: 
+Stage-Stage-1: Map: 1  Reduce: 6   Cumulative CPU: 37.72 sec   HDFS Read: 122612023 HDFS Write: 904 SUCCESS
+Stage-Stage-2: Map: 1  Reduce: 1   Cumulative CPU: 4.15 sec   HDFS Read: 10164 HDFS Write: 581 SUCCESS
+Total MapReduce CPU Time Spent: 41 seconds 870 msec
+OK
+A	F	7.5478173E7	1.1319733134602676E11	1.0753640820731711E11	1.1183889876961186E11	25.505698877458507	38251.814164124684	0.050003950302472205	2959267
+N	F	1966480.0	2.946114826740028E9	2.798796636156393E9	2.9110301630685787E9	25.530080751953886	38248.31650014317	0.04999558590607176	77026
+N	O	1.49872794E8	2.247484874304172E11	2.1351545694798584E11	2.22059197400714E11	25.495187016222236	38232.45410805886	0.049979149350665796	5878474
+R	F	7.5577628E7	1.1335191421818013E11	1.0768808181149016E11	1.1199430786621811E11	25.512150382609875	38263.32154392178	0.049979780024126605	2962417
+Time taken: 118.708 seconds, Fetched: 4 row(s)

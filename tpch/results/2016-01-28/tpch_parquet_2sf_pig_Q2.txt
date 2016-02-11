@@ -1,0 +1,6 @@
+WARNING: Use "yarn jar" to launch YARN applications.
+16/01/28 15:57:29 INFO pig.ExecTypeProvider: Trying ExecType : LOCAL
+16/01/28 15:57:29 INFO pig.ExecTypeProvider: Trying ExecType : MAPREDUCE
+16/01/28 15:57:29 INFO pig.ExecTypeProvider: Picked MAPREDUCE as the ExecType
+2016-01-28 15:57:29,853 [main] INFO  org.apache.pig.Main - Apache Pig version 0.15.0.2.3.2.0-2950 (rexported) compiled Sep 30 2015, 19:39:20
+2016-01-28 15:57:29,853 [main] INFO  org.apache.pig.Main - Logging error messages to: /root/D2F-Bench/bin/pig_1453996649851.log

@@ -25,7 +25,7 @@ Edit the `~/D2F-Bench/tpch/conf/settings.sh` file:
 You need to decide on a "Scale Factor" which represents how much data you will generate. Scale Factor roughly translates to gigabytes, so a Scale Factor of 100 is about 100 gigabytes and one terabyte is Scale Factor 1000. Decide how much data you want and keep it in mind for the next step. If you have a cluster of 4-10 nodes or just want to experiment at a smaller scale, scale 1000 (1 TB) of data is a good starting point. If you have a large cluster, you may want to choose Scale 10000 (10 TB) or more.
 
 * __ENGINE=hive__ -- set the execution engine with which you want to run the benchmark. Supported are hive, pig, spark-sql, impala.
-* __FILE_FORMAT=orc__ -- defines the data file format for storing the table data. Supported are ORC, RCfile, Parquet, SequenceFile, TextFile. 
+* __FILE_FORMAT=orc__ -- defines the data file format for storing the table data. Supported are ORC, RCfile, Parquet, SequenceFile, TextFile. To use these File Formats with PIG, switch the Querys in D2F-Bench\tpch\queries\pig with the required from D2F-Bench\tpch\queries\pig\Fileformat
 * __TEST_QUERIES="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22"__ -- defines the list of queries to execute sequencially in one data test. Between each execution is performed cache cleanup on underlying operating system.
 
 There are additional parameters which are engine specific and are curently in test-mode.

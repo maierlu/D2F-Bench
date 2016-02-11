@@ -1,0 +1,127 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/spark/lib/spark-assembly-1.4.1.2.3.2.0-2950-hadoop2.7.1.2.3.2.0-2950.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+WARNING: Use "yarn jar" to launch YARN applications.
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/spark/lib/spark-assembly-1.4.1.2.3.2.0-2950-hadoop2.7.1.2.3.2.0-2950.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+
+Logging initialized using configuration in file:/etc/hive/2.3.2.0-2950/0/hive-log4j.properties
+OK
+Time taken: 2.087 seconds
+Query ID = root_20151217145449_b55b177c-2eca-44d7-a74c-10b4b7a2bdcd
+Total jobs = 6
+WARNING: Use "yarn jar" to launch YARN applications.
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/hdp/2.3.2.0-2950/spark/lib/spark-assembly-1.4.1.2.3.2.0-2950-hadoop2.7.1.2.3.2.0-2950.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+Execution log at: /tmp/root/root_20151217145449_b55b177c-2eca-44d7-a74c-10b4b7a2bdcd.log
+2015-12-17 14:55:06	Starting to launch local task to process map join;	maximum memory = 255328256
+2015-12-17 14:55:11	Processing rows:	200000	Hashtable size:	199999	Memory usage:	142762616	percentage:	0.559
+2015-12-17 14:55:13	Processing rows:	300000	Hashtable size:	299999	Memory usage:	200756400	percentage:	0.786
+2015-12-17 14:55:13	Dump the side-table for tag: 0 with group count: 300000 into file: file:/tmp/root/d41c935b-b4e9-4815-83ed-4be7556657d3/hive_2015-12-17_14-54-49_321_1107106975437393738-1/-local-10014/HashTable-Stage-13/MapJoin-mapfile30--.hashtable
+2015-12-17 14:55:13	Uploaded 1 File to: file:/tmp/root/d41c935b-b4e9-4815-83ed-4be7556657d3/hive_2015-12-17_14-54-49_321_1107106975437393738-1/-local-10014/HashTable-Stage-13/MapJoin-mapfile30--.hashtable (50984399 bytes)
+2015-12-17 14:55:13	End of local task; Time Taken: 7.63 sec.
+Execution completed successfully
+MapredLocal task succeeded
+Launching Job 1 out of 6
+Number of reduce tasks is set to 0 since there's no reduce operator
+Starting Job = job_1450357971950_0062, Tracking URL = http://sandbox.hortonworks.com:8088/proxy/application_1450357971950_0062/
+Kill Command = /usr/hdp/2.3.2.0-2950/hadoop/bin/hadoop job  -kill job_1450357971950_0062
+Hadoop job information for Stage-13: number of mappers: 1; number of reducers: 0
+2015-12-17 14:55:37,977 Stage-13 map = 0%,  reduce = 0%
+2015-12-17 14:56:39,068 Stage-13 map = 0%,  reduce = 0%, Cumulative CPU 13.75 sec
+2015-12-17 14:57:40,011 Stage-13 map = 0%,  reduce = 0%, Cumulative CPU 17.72 sec
+2015-12-17 14:58:40,440 Stage-13 map = 0%,  reduce = 0%, Cumulative CPU 17.0 sec
+2015-12-17 14:59:41,172 Stage-13 map = 0%,  reduce = 0%, Cumulative CPU 15.12 sec
+2015-12-17 15:00:16,014 Stage-13 map = 100%,  reduce = 0%
+MapReduce Total cumulative CPU time: 15 seconds 120 msec
+Ended Job = job_1450357971950_0062 with errors
+Error during job, obtaining debugging information...
+Examining task ID: task_1450357971950_0062_m_000000 (and more) from job job_1450357971950_0062
+
+Task with the most failures(4): 
+-----
+Task ID:
+  task_1450357971950_0062_m_000000
+
+URL:
+  http://sandbox.hortonworks.com:8088/taskdetails.jsp?jobid=job_1450357971950_0062&tipid=task_1450357971950_0062_m_000000
+-----
+Diagnostic Messages for this Task:
+Error: java.lang.RuntimeException: Error in configuring object
+	at org.apache.hadoop.util.ReflectionUtils.setJobConf(ReflectionUtils.java:112)
+	at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:78)
+	at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+	at org.apache.hadoop.mapred.MapTask.runOldMapper(MapTask.java:449)
+	at org.apache.hadoop.mapred.MapTask.run(MapTask.java:343)
+	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:164)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:415)
+	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1657)
+	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:158)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hadoop.util.ReflectionUtils.setJobConf(ReflectionUtils.java:109)
+	... 9 more
+Caused by: java.lang.RuntimeException: Error in configuring object
+	at org.apache.hadoop.util.ReflectionUtils.setJobConf(ReflectionUtils.java:112)
+	at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:78)
+	at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+	at org.apache.hadoop.mapred.MapRunner.configure(MapRunner.java:38)
+	... 14 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hadoop.util.ReflectionUtils.setJobConf(ReflectionUtils.java:109)
+	... 17 more
+Caused by: java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at org.apache.hadoop.hive.serde2.objectinspector.primitive.WritableIntObjectInspector.copyObject(WritableIntObjectInspector.java:41)
+	at org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils.copyToStandardObject(ObjectInspectorUtils.java:311)
+	at org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils.copyToStandardObject(ObjectInspectorUtils.java:346)
+	at org.apache.hadoop.hive.ql.exec.persistence.MapJoinEagerRowContainer.read(MapJoinEagerRowContainer.java:138)
+	at org.apache.hadoop.hive.ql.exec.persistence.MapJoinEagerRowContainer.read(MapJoinEagerRowContainer.java:131)
+	at org.apache.hadoop.hive.ql.exec.persistence.MapJoinTableContainerSerDe.load(MapJoinTableContainerSerDe.java:85)
+	at org.apache.hadoop.hive.ql.exec.mr.HashTableLoader.load(HashTableLoader.java:98)
+	at org.apache.hadoop.hive.ql.exec.MapJoinOperator.loadHashTable(MapJoinOperator.java:288)
+	at org.apache.hadoop.hive.ql.exec.MapJoinOperator$1.call(MapJoinOperator.java:173)
+	at org.apache.hadoop.hive.ql.exec.MapJoinOperator$1.call(MapJoinOperator.java:169)
+	at org.apache.hadoop.hive.ql.exec.mr.ObjectCache.retrieve(ObjectCache.java:55)
+	at org.apache.hadoop.hive.ql.exec.mr.ObjectCache.retrieveAsync(ObjectCache.java:63)
+	at org.apache.hadoop.hive.ql.exec.MapJoinOperator.initializeOp(MapJoinOperator.java:166)
+	at org.apache.hadoop.hive.ql.exec.vector.VectorMapJoinBaseOperator.initializeOp(VectorMapJoinBaseOperator.java:91)
+	at org.apache.hadoop.hive.ql.exec.vector.VectorMapJoinOperator.initializeOp(VectorMapJoinOperator.java:121)
+	at org.apache.hadoop.hive.ql.exec.Operator.initialize(Operator.java:363)
+	at org.apache.hadoop.hive.ql.exec.Operator.initialize(Operator.java:482)
+	at org.apache.hadoop.hive.ql.exec.Operator.initializeChildren(Operator.java:439)
+	at org.apache.hadoop.hive.ql.exec.Operator.initialize(Operator.java:376)
+	at org.apache.hadoop.hive.ql.exec.mr.ExecMapper.configure(ExecMapper.java:131)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.hadoop.util.ReflectionUtils.setJobConf(ReflectionUtils.java:109)
+	at org.apache.hadoop.util.ReflectionUtils.setConf(ReflectionUtils.java:78)
+	at org.apache.hadoop.util.ReflectionUtils.newInstance(ReflectionUtils.java:136)
+	at org.apache.hadoop.mapred.MapRunner.configure(MapRunner.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+
+
+FAILED: Execution Error, return code 2 from org.apache.hadoop.hive.ql.exec.mr.MapRedTask
+MapReduce Jobs Launched: 
+Stage-Stage-13: Map: 1   Cumulative CPU: 15.12 sec   HDFS Read: 0 HDFS Write: 0 FAIL
+Total MapReduce CPU Time Spent: 15 seconds 120 msec

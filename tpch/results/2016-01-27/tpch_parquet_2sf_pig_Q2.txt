@@ -1,0 +1,2 @@
+WARNING: Use "yarn jar" to launch YARN applications.
+16/01/27 16:59:03 WARN fs.FileUtil: Failed to delete file or dir [/tmp/hadoop-unjar1610807495968922257/org/apache/pig/parser]: it still exists.
