@@ -1,5 +1,7 @@
 # D2F-Bench (Data File Format Benchmark)
 
+Added the support of Avro and Parquet File Formats. Hive, Pig and spark-sql working on HDInsight (Hadoop via Microsoft azure) with orc.
+
 ## Prerequisites
 
 * Apache Hadoop 2.2 or later  / Cloudera CDH / HortonWorks HDP 
@@ -11,7 +13,7 @@
 
 1.Create a copy of the project locally:
 
-`git clone https://github.com/t-ivanov/D2F-Bench`
+`git clone https://github.com/maierlu/D2F-Bench`
 
 2.Download, compile and package the appropriate TPC-H data generator by executing:
 
