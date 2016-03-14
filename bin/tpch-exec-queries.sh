@@ -62,7 +62,7 @@ do
 	SPARKSQL_PARAMS="-v --driver-memory 1g --executor-memory 3g --num-executors 4 --executor-cores 6 --master yarn"
 	# first have to select the database "use tpch_orc_2sf"
 		echo "use ${DATABASE_SPARK};"|cat - ${QUERY_DIR}/tpch_query${i}.sql > /tmp/tmp_query${i}.sql
-		/usr/hdp/2.3.2.0-2950/spark/bin/spark-sql ${SPARKSQL_PARAMS} -f /tmp/tmp_query${i}.sql > ${RESULT_DIR}/${DATABASE}_query${i}.txt 2>&1
+		/usr/hdp/2.3.3.1-7/spark/bin/spark-sql ${SPARKSQL_PARAMS} -f /tmp/tmp_query${i}.sql > ${RESULT_DIR}/${DATABASE}_query${i}.txt 2>&1
 	elif [ $ENGINE == "pig" ]
 	then
 		#execute pig queires
